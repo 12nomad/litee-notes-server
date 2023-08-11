@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:litee-notes.db"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  username String  @unique
+  password String
+  email    String?
+
+  boards Board[]
+  queues Queue[]
+  notes  Note[]
+
+  @@map("users")
+}
+
+model Board {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title  String
+  queues Queue[]
+  notes  Note[]
+
+  owner   User @relation(references: [id], fields: [ownerId], onDelete: Cascade)
+  ownerId Int
+
+  @@map("boards")
+}
+
+model Queue {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title String
+  notes Note[]
+
+  owner   User  @relation(references: [id], fields: [ownerId], onDelete: Cascade)
+  ownerId Int
+  board   Board @relation(references: [id], fields: [boardId], onDelete: Cascade)
+  boardId Int
+
+  @@map("queues")
+}
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title   String
+  content String?
+
+  owner   User  @relation(references: [id], fields: [ownerId], onDelete: Cascade)
+  ownerId Int
+  board   Board @relation(references: [id], fields: [boardId], onDelete: Cascade)
+  boardId Int
+  queue   Queue @relation(references: [id], fields: [queueId], onDelete: Cascade)
+  queueId Int
+
+  @@map("notes")
+}
