@@ -7,7 +7,7 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "node ./dist/app.js",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child src/app.ts",
     "prisma:dev:migrate": "npx prisma migrate dev",
