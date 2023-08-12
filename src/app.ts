@@ -13,13 +13,13 @@ const app: Express = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://litee-notes.netlify.app",
+    origin: "*",
   },
 });
 
 app.use(
   cors({
-    origin: "https://litee-notes.netlify.app",
+    origin: "*",
   })
 );
 app.use(express.json());

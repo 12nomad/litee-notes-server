@@ -55,13 +55,19 @@ export const joinBoardController = (
   io: Server,
   socket: SocketExtended,
   { boardId }: { boardId: string }
-) => socket.join(boardId);
+) => {
+  socket.join(boardId.toString());
+  console.log("join");
+};
 
 export const leaveBoardController = (
   io: Server,
   socket: SocketExtended,
   { boardId }: { boardId: string }
-) => socket.leave(boardId);
+) => {
+  socket.leave(boardId.toString());
+  console.log("leave");
+};
 
 export const updateBoardController = async (
   io: Server,
