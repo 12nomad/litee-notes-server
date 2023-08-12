@@ -57,7 +57,6 @@ export const joinBoardController = (
   { boardId }: { boardId: string }
 ) => {
   socket.join(boardId.toString());
-  console.log("join");
 };
 
 export const leaveBoardController = (
@@ -66,7 +65,6 @@ export const leaveBoardController = (
   { boardId }: { boardId: string }
 ) => {
   socket.leave(boardId.toString());
-  console.log("leave");
 };
 
 export const updateBoardController = async (
