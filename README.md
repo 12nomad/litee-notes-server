@@ -2,6 +2,8 @@
 
 A simple clone of trello.com with a React.js frontend and an Express.js backend
 
+<img width="1920" height="928" alt="notes" src="https://github.com/user-attachments/assets/8678fd17-9dc6-4fad-9514-63b4ac264cd1" />
+
 ## 🚀 Tech Stack
 
 - Typescript, Express.js, Prisma ORM
