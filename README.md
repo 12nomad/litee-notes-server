@@ -1,4 +1,4 @@
-# Litee Notes Server
+# 📒 Litee Notes Server
 
 A simple clone of trello.com with a React.js frontend and an Express.js backend
 
@@ -31,4 +31,4 @@ npm i
 npm run dev
 ```
 
-# Litee Notes Client (reactjs client 👉 [Litee Notes Client](https://github.com/12nomad/litee-notes-client)) 
+# ‼️ Litee Notes Client (reactjs client 👉 [Litee Notes Client](https://github.com/12nomad/litee-notes-client)) 
