@@ -31,4 +31,4 @@ npm i
 npm run dev
 ```
 
-#‼️ Litee Notes Client (reactjs client 👉 [Litee Notes Client](https://github.com/12nomad/litee-notes-client)) 
+# ❗Litee Notes Client (reactjs client 👉 [Litee Notes Client](https://github.com/12nomad/litee-notes-client)) 
